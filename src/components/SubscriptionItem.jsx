@@ -1,4 +1,4 @@
-function SubscriptionItem({ subscription }) {
+function SubscriptionItem({ subscription, onToggleSimulate, onDelete }) {
   // 1. Calculation Zone (above return)
   const monthlyCost =
     subscription.billingCycle === "yearly"
@@ -15,6 +15,18 @@ function SubscriptionItem({ subscription }) {
       )}
       <p>Category: {subscription.category} | Usage: {subscription.usage}</p>
       <p>Status: {subscription.simulateCancel ? "Marked to Cancel" : "Active"}</p>
+      <label>
+  <input
+        type="checkbox"
+        checked={subscription.simulateCancel}
+        onChange={() => onToggleSimulate(subscription.id)}
+    />
+    Simulate Cancel
+    </label>
+
+    <button onClick={() => onDelete(subscription.id)}>
+    Delete
+    </button>   
     </li>
   );
 }
