@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import initialSubscriptions from './data/initialSubscriptions'
 import SubscriptionList from './components/SubscriptionList'
-
+import SavingsDashboard from './components/SavingsDashboard'
 
 
 
@@ -27,6 +27,7 @@ function App() {
   return (
     <>
       <h1>"What If?" Subscription & Impulse-Buy Simulator</h1>
+      <SavingsDashboard subscriptions={subscriptions} />
       <SubscriptionList
         subscriptions={subscriptions}
         onToggleSimulate={handleToggleSimulate}
