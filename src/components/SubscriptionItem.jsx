@@ -7,7 +7,11 @@ function SubscriptionItem({ subscription, onToggleSimulate, onDelete }) {
 
   // 2. Display Zone (inside return)
   return (
-    <li>
+    <li
+  className={`subscription-card ${
+    subscription.simulateCancel ? 'simulated-cancel' : ''
+  }`}
+>
       <h3>Name: {subscription.name}</h3>
       <p>Cost: ₹{subscription.cost} / {subscription.billingCycle}</p>
       {subscription.billingCycle === "yearly" && (
@@ -15,7 +19,7 @@ function SubscriptionItem({ subscription, onToggleSimulate, onDelete }) {
       )}
       <p>Category: {subscription.category} | Usage: {subscription.usage}</p>
       <p>Status: {subscription.simulateCancel ? "Marked to Cancel" : "Active"}</p>
-      <label>
+      <label className="checkbox-label">
   <input
         type="checkbox"
         checked={subscription.simulateCancel}
@@ -24,9 +28,13 @@ function SubscriptionItem({ subscription, onToggleSimulate, onDelete }) {
     Simulate Cancel
     </label>
 
-    <button onClick={() => onDelete(subscription.id)}>
-    Delete
-    </button>   
+    <button
+      className="btn-danger"
+      onClick={() => onDelete(subscription.id)}
+    >
+      Delete
+    </button>
+      
     </li>
   );
 }

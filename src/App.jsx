@@ -67,7 +67,7 @@ const filteredSubscriptions = subscriptions.filter((sub) => {
    
 
   return (
-    <>
+    <div className="app-container">
       <h1>"What If?" Subscription & Impulse-Buy Simulator</h1>
       <SavingsDashboard subscriptions={subscriptions} />
       <SubscriptionForm onAdd={handleAddSubscription} />
@@ -83,7 +83,7 @@ const filteredSubscriptions = subscriptions.filter((sub) => {
         onToggleSimulate={handleToggleSimulate}
         onDelete={handleDelete}
       />
-    </>
+    </div>
   );
 }
 

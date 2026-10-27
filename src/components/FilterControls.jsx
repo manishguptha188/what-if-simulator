@@ -6,7 +6,7 @@ function FilterControls({
   onResetSimulation,
 }) {
   return (
-    <div>
+    <div className="filter-card">
       <h3>Filter Subscriptions</h3>
 
       {/* We'll add the controls here */}
@@ -35,11 +35,12 @@ function FilterControls({
             Show Rarely Used Only
           </label>
           <button
-  type="button"
-  onClick={onResetSimulation}
->
-  Reset What-If Simulation
-</button>   
+            type="button"
+            onClick={onResetSimulation}
+            className="btn-secondary"
+            >
+            Reset What-If Simulation
+        </button>  
         
 
     </div>

@@ -31,74 +31,83 @@ function SubscriptionForm({ onAdd }) {
    
 
   return (
-    <form onSubmit={handleSubmit}>
-        <button type="submit">Add Subscription</button>
-      <h3>Add New Subscription</h3>
+  <form onSubmit={handleSubmit} className="form-card">
+    <h3>Add New Subscription</h3>
+
+    <div className="form-grid">
       <div>
-  <label>
-    Name:{' '}
-    <input
-      type="text"
-      value={name}
-      onChange={(e) => setName(e.target.value)}
-      placeholder="e.g. YouTube Premium"
-    />
-    <div>
-  <label>
-    Cost (₹):{' '}
-    <input
-      type="number"
-      value={cost}
-      onChange={(e) => setCost(e.target.value)}
-      placeholder="e.g. 149"
-    />
-  </label>
-</div>
-<div>
-  <label>
-    Billing Cycle:{' '}
-    <select
-      value={billingCycle}
-      onChange={(e) => setBillingCycle(e.target.value)}
-    >
-      <option value="monthly">Monthly</option>
-      <option value="yearly">Yearly</option>
-    </select>
-  </label>
-</div>
-<div>
-  <label>
-    Category:{' '}
-    <select
-      value={category}
-      onChange={(e) => setCategory(e.target.value)}
-    >
-      <option value="Entertainment">Entertainment</option>
-      <option value="Productivity">Productivity</option>
-      <option value="Fitness">Fitness</option>
-      <option value="Education">Education</option>
-      <option value="Finance">Finance</option>
-      <option value="Other">Other</option>
-    </select>
-  </label>
-</div>
-<div>
-  <label>
-    Usage Level:{' '}
-    <select
-      value={usage}
-      onChange={(e) => setUsage(e.target.value)}
-    >
-      <option value="Daily">Daily</option>
-      <option value="Weekly">Weekly</option>
-      <option value="Rarely">Rarely</option>
-    </select>
-  </label>
-</div>
-  </label>
-</div>
-    </form>
-  )
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="e.g. YouTube Premium"
+          />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Cost (₹):
+          <input
+            type="number"
+            value={cost}
+            onChange={(e) => setCost(e.target.value)}
+            placeholder="e.g. 149"
+          />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Billing Cycle:
+          <select
+            value={billingCycle}
+            onChange={(e) => setBillingCycle(e.target.value)}
+          >
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+          </select>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Category:
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="Entertainment">Entertainment</option>
+            <option value="Productivity">Productivity</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Education">Education</option>
+            <option value="Finance">Finance</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Usage Level:
+          <select
+            value={usage}
+            onChange={(e) => setUsage(e.target.value)}
+          >
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Rarely">Rarely</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <button type="submit">Add Subscription</button>
+  </form>
+)
+
 }
 
 export default SubscriptionForm

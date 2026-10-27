@@ -37,17 +37,24 @@ const isAffordableInOneYear =
   monthlySavings > 0 && oneYearSavings >= numericGoalPrice
 
   return (
-    <div>
+    <div className="dashboard-card">
       <h2>Spending & What-If Savings Dashboard</h2>
-        <p>Total Monthly Spend: ₹{totalMonthlySpend}</p>
+
+      <div className="stat-box">
+              <div className="stat-box">
+        <div className="stat-label">Total Monthly Spend</div>
+        <div className="stat-value">₹{totalMonthlySpend} / month</div>
+      </div>  
         <p>Equivalent Annual Spend: ₹{yearlySpend} / year</p>
         <p>Monthly Savings: ₹{monthlySavings} / month</p>
         <p>1-Year Savings: ₹{oneYearSavings}</p>
         <p>3-Year Savings: ₹{threeYearSavings}</p>
         <p>5-Year Savings: ₹{fiveYearSavings}</p>
+      </div>
       {/* We'll display the numbers here */}
       <h3>🎯 Impulse-Buy Goal Tracker</h3>
-      <div>
+      <div className="goal-inputs">
+
   <label>
     Goal Item:{' '}
     <input
@@ -68,6 +75,8 @@ const isAffordableInOneYear =
     />
   </label>
 </div>
+
+<div className="goal-tracker">
 {monthlySavings === 0 && (
   <p>
     💡 Check "Simulate Cancel" on subscriptions below to see when you could afford this goal!
@@ -87,6 +96,7 @@ const isAffordableInOneYear =
     🎉 You can fully afford this within your 1st year of cancellations!
   </p>
 )}
+</div>
     </div>
     
   )
